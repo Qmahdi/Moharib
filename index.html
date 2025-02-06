@@ -3,14 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>moharb</title>
+  <title>حمزة للنقل الأوروبي</title>
   <style>
-    /* Set a full-page gradient background from green at the top to blue at the bottom */
+    /* Body background with multiple layers:
+       - Two images (train at top, taxi at bottom)
+       - A linear gradient from green to blue */
     body {
       margin: 0;
       padding: 0;
       min-height: 100vh;
-      background: linear-gradient(to bottom, green, blue);
+      background: 
+        url('https://via.placeholder.com/150x100?text=Train') top center no-repeat,
+        url('https://via.placeholder.com/150x100?text=Taxi') bottom center no-repeat,
+        linear-gradient(to bottom, green, blue);
+      background-size: 150px auto, 150px auto, cover;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -18,7 +24,7 @@
       color: white;
     }
 
-    /* Style the header */
+    /* Header styling */
     header {
       width: 100%;
       text-align: center;
@@ -30,7 +36,7 @@
       margin: 0;
     }
 
-    /* Container for the buttons, now stacked vertically */
+    /* Container for vertically stacked buttons */
     .button-container {
       display: flex;
       flex-direction: column;
@@ -48,20 +54,32 @@
       border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s, transform 0.2s;
-      width: 200px; /* Fixed width for consistency */
+      width: 250px; /* Fixed width for consistency */
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    /* Button colors */
+    /* Button flag image styling */
+    .button-container button img {
+      margin-right: 8px;
+      vertical-align: middle;
+      width: 30px;
+      height: auto;
+    }
+
+    /* Specific button background colors */
+    /* First button (ايطاليا) - Italy flag */
     .button-container button:nth-child(1) {
-      background-color: #FF5733; /* Button for Austria */
+      background-color: #FF5733;
     }
-
+    /* Second button (النمسا) - Austria flag */
     .button-container button:nth-child(2) {
-      background-color: #33C1FF; /* Button for Italy */
+      background-color: #33C1FF;
     }
-
+    /* Third button (مزيد من المعلومات) - More Information */
     .button-container button:nth-child(3) {
-      background-color: #75FF33; /* Button for moharid */
+      background-color: #75FF33;
     }
 
     /* Hover effect for buttons */
@@ -76,9 +94,22 @@
   </header>
 
   <div class="button-container">
-    <button>Austria</button>
-    <button>Italy</button>
-    <button>moharid</button>
+    <!-- First button: Italy (ايطاليا) -->
+    <button>
+      <img src="https://flagcdn.com/w40/it.png" alt="Italy Flag" />
+      ايطاليا
+    </button>
+
+    <!-- Second button: Austria (النمسا) -->
+    <button>
+      <img src="https://flagcdn.com/w40/at.png" alt="Austria Flag" />
+      النمسا
+    </button>
+
+    <!-- Third button: More Information (مزيد من المعلومات) -->
+    <button>
+      مزيد من المعلومات
+    </button>
   </div>
 </body>
 </html>
